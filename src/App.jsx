@@ -9,12 +9,13 @@ function App() {
     expectedReturn: 6,
     duration: 10,
   });
+  const inputValid = userInput.duration > 0;
   function handleChange(inputIdentifier, newValue) {
     setUserInput((prevUserInput) => {
       console.log(prevUserInput);
       return {
         ...prevUserInput,
-        [inputIdentifier]: newValue,
+        [inputIdentifier]: +newValue,
       };
     });
   }
